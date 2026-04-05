@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy – TurboTech Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;600;700&family=Bricolage+Grotesque:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  background: #F8FAFC;
+  color: #0F172A;
+  line-height: 1.75;
+  font-size: 16px;
+}
+:root {
+  --blue: #2563EB;
+  --blue-light: #EFF6FF;
+  --blue-mid: #BFDBFE;
+  --dark: #0F172A;
+  --grey: #6B7280;
+  --border: #E2E8F0;
+  --white: #fff;
+}
+nav {
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 8px rgba(0,0,0,.05);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-inner {
+  max-width: 900px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; height: 64px;
+}
+.logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon {
+  width: 36px; height: 36px; border-radius: 9px;
+  background: var(--blue);
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-icon svg { width: 20px; height: 20px; }
+.logo-brand { font-family: 'Clash Display', sans-serif; font-weight: 700; color: var(--dark); font-size: 1.1rem; }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--blue); text-decoration: none; font-size: 0.88rem; font-weight: 600;
+  padding: 8px 14px; border-radius: 8px; border: 1.5px solid var(--blue-mid);
+  background: var(--blue-light); transition: background .2s;
+}
+.back-link:hover { background: #dbeafe; }
+
+.page-hero {
+  background: linear-gradient(135deg, var(--dark) 0%, #1e3a6e 100%);
+  padding: 64px 24px 52px;
+  text-align: center; color: #fff;
+}
+.page-hero h1 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+  margin-bottom: 12px; letter-spacing: -0.02em;
+}
+.page-hero p { font-size: 0.95rem; color: rgba(255,255,255,.7); }
+
+.content-wrap {
+  max-width: 820px; margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+.policy-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 44px 48px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.06);
+}
+.policy-section { margin-bottom: 44px; }
+.policy-section:last-child { margin-bottom: 0; }
+.policy-section h2 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1.15rem; font-weight: 700;
+  color: var(--dark); margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--blue-mid);
+  display: flex; align-items: center; gap: 10px;
+}
+.policy-section p { color: #374151; font-size: 0.92rem; margin-bottom: 12px; }
+.policy-section ul {
+  list-style: none; display: flex; flex-direction: column; gap: 8px;
+  padding: 0; margin-top: 8px;
+}
+.policy-section ul li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 0.9rem; color: #374151;
+}
+.policy-section ul li::before {
+  content: ''; width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; margin-top: 2px;
+  background: var(--blue-light) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563EB' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") center/11px no-repeat;
+}
+.last-updated {
+  text-align: center; margin-top: 40px;
+  font-size: 0.82rem; color: var(--grey);
+}
+.contact-box {
+  background: var(--blue-light); border: 1px solid var(--blue-mid);
+  border-radius: 12px; padding: 20px 24px; margin-top: 16px;
+}
+.contact-box a { color: var(--blue); font-weight: 600; text-decoration: none; }
+.contact-box a:hover { text-decoration: underline; }
+
+footer {
+  background: var(--dark); color: #64748b;
+  text-align: center; padding: 24px;
+  font-size: 0.82rem;
+}
+footer a { color: #94a3b8; text-decoration: none; margin: 0 8px; }
+footer a:hover { color: #fff; }
+
+@media (max-width: 640px) {
+  .policy-card { padding: 28px 20px; }
+  .page-hero { padding: 44px 16px 36px; }
+  .content-wrap { padding: 32px 16px 60px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="turbotech-agency.html" class="logo-wrap">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+      </div>
+      <span class="logo-brand">TurboTech</span>
+    </a>
+    <a href="turbotech-agency.html" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Home
+    </a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <h1>Privacy Policy</h1>
+  <p>Last updated: April 2026 &nbsp;·&nbsp; TurboTech Agency</p>
+</div>
+
+<div class="content-wrap">
+  <div class="policy-card">
+
+    <div class="policy-section">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+        Introduction
+      </h2>
+      <p>Welcome to TurboTech Agency ("we", "our", "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard information when you visit our website or engage our services.</p>
+      <p>By using our website or services, you agree to the terms described in this Privacy Policy.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Information We Collect
+      </h2>
+      <p>We only collect information that is necessary to provide our services. This may include:</p>
+      <ul>
+        <li>Your name and contact details (phone number, email address) when you fill out our contact form or reach out via WhatsApp.</li>
+        <li>Your business type and requirements shared with us for the purpose of providing a quote or delivering services.</li>
+        <li>Basic usage information through cookies (e.g., pages visited) to improve website performance.</li>
+      </ul>
+      <p>We do not collect sensitive personal data such as payment card details, Aadhaar numbers, or government IDs through our website.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        How We Use Your Information
+      </h2>
+      <p>The information we collect is used solely to:</p>
+      <ul>
+        <li>Respond to your inquiries and provide requested services.</li>
+        <li>Communicate project updates, quotes, and deliverables.</li>
+        <li>Improve our website and service offerings.</li>
+        <li>Send occasional service-related messages (no spam or promotional blasts).</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg>
+        No Sharing of Your Data
+      </h2>
+      <p><strong>We do not sell, rent, or share your personal information with any third party.</strong> Your data stays with TurboTech Agency and is used only for the purpose you provided it.</p>
+      <p>We may share aggregated, anonymous data (e.g., number of visitors) for business analytics, but this never includes personally identifiable information.</p>
+      <p>We will disclose information if legally required to do so by law enforcement or a court order.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        Data Security
+      </h2>
+      <p>We take reasonable technical and organisational measures to protect your personal information from unauthorised access, use, or disclosure. Our communications happen over secure, encrypted channels where possible.</p>
+      <p>However, no method of transmission over the Internet is 100% secure. We cannot guarantee absolute security.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Data Retention
+      </h2>
+      <p>We retain your personal information only for as long as necessary to provide our services or as required by applicable law. When your data is no longer needed, we securely delete or anonymise it.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Your Rights
+      </h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Request access to the personal data we hold about you.</li>
+        <li>Request correction of inaccurate or incomplete data.</li>
+        <li>Request deletion of your personal data.</li>
+        <li>Withdraw consent at any time where processing is based on consent.</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us using the details below.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.08a16 16 0 006 6l.36-.36a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Contact Us
+      </h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please reach out to us:</p>
+      <div class="contact-box">
+        <p><strong>TurboTech Agency</strong></p>
+        <p>📞 Phone / WhatsApp: <a href="tel:+919449989467">+91 94499 89467</a></p>
+        <p>📧 Email: <a href="mailto:turbotech.agency@gmail.com">turbotech.agency@gmail.com</a></p>
+        <p>💬 WhatsApp: <a href="https://wa.me/919449989467" target="_blank">wa.me/919449989467</a></p>
+      </div>
+    </div>
+
+  </div>
+  <p class="last-updated">This Privacy Policy was last updated in April 2026. We may update it periodically — please check back for changes.</p>
+</div>
+
+<footer>
+  <p>© 2026 TurboTech Agency. All rights reserved.</p>
+  <p style="margin-top:8px;">
+    <a href="turbotech-agency.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
+  </p>
+</footer>
+
+</body>
+</html>
