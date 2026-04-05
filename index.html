@@ -462,14 +462,33 @@ footer { background: var(--dark); color: #94a3b8; padding: 64px 24px 32px; }
   .footer-top { grid-template-columns: 1fr 1fr; }
 }
 
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr !important;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero-visual {
+  display: none !important;
+}
+
+@media (max-width: 1040px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+
 @media (max-width: 860px) {
   .hero-inner { grid-template-columns: 1fr; gap: 44px; }
-  .hero-visual { display: none; }
   .hero-section { padding: 72px 24px 64px; }
+
   .steps-row { grid-template-columns: repeat(2, 1fr); gap: 48px 0; }
   .steps-row::before { display: none; }
 
-  /* Vertical dotted connector for 2-col on tablet */
   .steps-row .step:nth-child(1)::after,
   .steps-row .step:nth-child(2)::after,
   .steps-row .step:nth-child(3)::after {
