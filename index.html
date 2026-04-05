@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TurboTech Agency – Complete Digital & Tech Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ── RESET & BASE ──────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  background: #fff;
+  color: #0F172A;
+  line-height: 1.65;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* ── CSS VARIABLES ─────────────────────────────────── */
+:root {
+  --blue: #2563EB;
+  --blue-dark: #1D4ED8;
+  --blue-light: #EFF6FF;
+  --blue-mid: #BFDBFE;
+  --dark: #0F172A;
+  --grey: #6B7280;
+  --border: #E2E8F0;
+  --bg: #F8FAFC;
+  --white: #fff;
+  --green: #22C55E;
+  --wa: #25D366;
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 1px 4px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow: 0 4px 20px rgba(0,0,0,.07);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,.10);
+}
+
+/* ── TYPOGRAPHY ─────────────────────────────────────── */
+h1,h2,h3,h4 { font-family: 'Clash Display', sans-serif; letter-spacing: -0.02em; line-height: 1.15; }
+h1 { font-size: clamp(2rem, 5.5vw, 3.8rem); font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.6rem); font-weight: 600; }
+h3 { font-size: 1.15rem; font-weight: 600; }
+
+/* ── LAYOUT HELPERS ─────────────────────────────────── */
+.container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+section { padding: 88px 24px; }
+.section-inner { max-width: 1180px; margin: 0 auto; }
+
+/* ── BADGE ──────────────────────────────────────────── */
+.badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--blue-light); color: var(--blue);
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.8px;
+  text-transform: uppercase; padding: 6px 14px;
+  border-radius: 40px; border: 1px solid var(--blue-mid);
+  margin-bottom: 20px;
+}
+.badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+
+/* ── BUTTONS ────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px 26px; border-radius: var(--radius-sm);
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 0.92rem; font-weight: 600;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: all .2s ease; white-space: nowrap; min-height: 48px;
+}
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,99,235,.3); }
+.btn-outline { background: transparent; color: var(--blue); border: 2px solid var(--blue); }
+.btn-outline:hover { background: var(--blue); color: #fff; transform: translateY(-1px); }
+.btn-wa { background: var(--wa); color: #fff; }
+.btn-wa:hover { background: #1ebe5d; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37,211,102,.3); }
+.btn-call { background: var(--dark); color: #fff; }
+.btn-call:hover { background: #1e293b; transform: translateY(-1px); }
+.btn-sm { padding: 10px 20px; font-size: 0.85rem; min-height: 40px; }
+.btn-icon { width: 18px; height: 18px; flex-shrink: 0; }
+
+/* ── NAV ────────────────────────────────────────────── */
+nav {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226,232,240,.6);
+  box-shadow: 0 1px 8px rgba(0,0,0,.05);
+}
+.nav-inner {
+  max-width: 1180px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; height: 68px; position: relative;
+}
+.logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: var(--blue);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.logo-icon svg { width: 22px; height: 22px; }
+.logo-text {
+  display: flex; align-items: baseline; gap: 5px;
+  font-family: 'Clash Display', sans-serif; font-size: 1.22rem;
+}
+.logo-brand { font-weight: 700; color: var(--dark); letter-spacing: -0.5px; }
+.logo-agency { font-size: 0.75rem; font-weight: 400; color: var(--grey); letter-spacing: 0.3px; font-family: 'Bricolage Grotesque', sans-serif; }
+.nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+.nav-links a {
+  text-decoration: none; color: var(--grey); font-size: 0.88rem; font-weight: 500;
+  padding: 8px 12px; border-radius: 7px; transition: color .2s, background .2s;
+}
+.nav-links a:hover { color: var(--dark); background: var(--bg); }
+.nav-links a.active { color: var(--blue); }
+.nav-cta { display: flex; align-items: center; gap: 8px; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border-radius: 6px; background: none; border: none; }
+.hamburger span { width: 22px; height: 2px; background: var(--dark); border-radius: 2px; transition: .3s; display: block; }
+
+/* ── HERO ────────────────────────────────────────────── */
+.hero-section {
+  padding: 100px 24px 90px;
+  background: linear-gradient(165deg, #fff 60%, var(--blue-light) 100%);
+  position: relative; overflow: hidden;
+}
+.hero-section::before {
+  content: '';
+  position: absolute; top: -60px; right: -80px;
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(37,99,235,.08) 0%, transparent 65%);
+  border-radius: 50%; pointer-events: none;
+}
+.hero-section::after {
+  content: '';
+  position: absolute; bottom: -40px; left: -60px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(37,99,235,.05) 0%, transparent 65%);
+  border-radius: 50%; pointer-events: none;
+}
+.hero-inner {
+  max-width: 1180px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: center;
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-tagline {
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 1.2px;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: 18px;
+}
+.hero h1 { margin-bottom: 20px; color: var(--dark); }
+.hero h1 em { font-style: normal; color: var(--blue); }
+.hero p {
+  font-size: 1.05rem; color: var(--grey);
+  max-width: 480px; margin-bottom: 36px; line-height: 1.8;
+}
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-sub {
+  margin-top: 40px; padding-top: 28px;
+  border-top: 1px solid var(--border);
+  display: flex; gap: 28px; flex-wrap: wrap;
+}
+.hero-stat .num {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1.8rem; font-weight: 700; color: var(--blue); line-height: 1;
+}
+.hero-stat .lbl { font-size: 0.78rem; color: var(--grey); margin-top: 3px; }
+.hero-visual {
+  position: relative; z-index: 1;
+}
+.hero-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(37,99,235,.15);
+  border-radius: var(--radius-lg);
+  padding: 32px; box-shadow: var(--shadow-lg);
+}
+.hero-card-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 24px; padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-avatar {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--blue), #60a5fa);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.hero-card-title { font-weight: 600; font-size: 0.9rem; color: var(--dark); }
+.hero-card-sub { font-size: 0.75rem; color: var(--grey); }
+.service-list { display: flex; flex-direction: column; gap: 12px; }
+.service-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px; border-radius: 10px;
+  background: var(--bg); border: 1px solid var(--border);
+  transition: border-color .2s;
+}
+.service-item:hover { border-color: var(--blue-mid); }
+.service-item .si-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+.service-item .si-label { font-size: 0.85rem; font-weight: 500; color: var(--dark); }
+.floating-pill {
+  position: absolute; background: #fff;
+  border: 1px solid var(--border); border-radius: 40px;
+  padding: 8px 14px; box-shadow: var(--shadow);
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.78rem; font-weight: 600; color: var(--dark);
+  animation: floatPill 4s ease-in-out infinite;
+  white-space: nowrap;
+}
+.floating-pill.pill-1 { top: -18px; left: -20px; animation-delay: 0s; }
+.floating-pill.pill-2 { bottom: -14px; right: -14px; animation-delay: 2s; }
+.pill-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+@keyframes floatPill {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ── SERVICES SECTION ──────────────────────────────── */
+#services { background: var(--bg); }
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-header p { color: var(--grey); font-size: 1rem; max-width: 520px; margin: 12px auto 0; line-height: 1.8; }
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.service-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 32px 28px;
+  display: flex; flex-direction: column;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+  position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--blue), #60a5fa);
+  opacity: 0; transition: opacity .25s;
+}
+.service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--blue-mid); }
+.service-card:hover::before { opacity: 1; }
+.sc-icon {
+  width: 52px; height: 52px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 20px; flex-shrink: 0;
+}
+.sc-icon.blue { background: #EFF6FF; }
+.sc-icon.indigo { background: #EEF2FF; }
+.sc-icon.violet { background: #F5F3FF; }
+.sc-icon.cyan { background: #ECFEFF; }
+.sc-icon.emerald { background: #ECFDF5; }
+.sc-name { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+.sc-desc { font-size: 0.88rem; color: var(--grey); line-height: 1.7; margin-bottom: 20px; flex: 1; }
+.sc-features { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+.sc-features li {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.83rem; color: #374151;
+}
+.sc-features li::before {
+  content: ''; width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0;
+  background: #EFF6FF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563EB' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") center/10px no-repeat;
+}
+.sc-cta { margin-top: auto; }
+.service-card.featured { border-color: var(--blue); background: linear-gradient(160deg, #EFF6FF, #fff); }
+
+/* ── WHY US ─────────────────────────────────────────── */
+#why { background: var(--dark); }
+#why .badge { background: rgba(37,99,235,.2); border-color: rgba(37,99,235,.3); color: #93c5fd; }
+#why .badge::before { background: #93c5fd; }
+#why .section-header p { color: #94a3b8; }
+#why h2 { color: #fff; }
+.why-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; margin-top: 48px; }
+.why-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius); padding: 26px 20px;
+  text-align: center; transition: background .25s, transform .25s;
+}
+.why-card:hover { background: rgba(37,99,235,.12); transform: translateY(-3px); }
+.why-icon { font-size: 2rem; display: block; margin-bottom: 14px; }
+.why-title { font-size: 0.88rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.why-text { font-size: 0.78rem; color: #94a3b8; line-height: 1.6; }
+
+/* ── HOW IT WORKS ───────────────────────────────────── */
+#how { background: var(--white); }
+
+/* Desktop: horizontal steps with dotted line */
+.steps-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 52px; position: relative;
+}
+.steps-row::before {
+  content: '';
+  position: absolute;
+  top: 29px; left: calc(12.5% + 4px); right: calc(12.5% + 4px);
+  height: 0;
+  border-top: 3px dashed var(--blue-mid);
+  z-index: 0;
+}
+.step {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; padding: 0 20px; position: relative; z-index: 1;
+}
+.step-num {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--blue); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Clash Display', sans-serif; font-size: 1.2rem; font-weight: 700;
+  margin-bottom: 20px; box-shadow: 0 0 0 6px var(--blue-light);
+  transition: transform .2s; flex-shrink: 0;
+}
+.step:hover .step-num { transform: scale(1.1); }
+.step-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 8px; color: var(--dark); }
+.step-desc { font-size: 0.82rem; color: var(--grey); line-height: 1.65; }
+
+/* ── NUMBERS ─────────────────────────────────────────── */
+#numbers { background: var(--blue); padding: 0; }
+.numbers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.number-item {
+  padding: 48px 32px; text-align: center;
+  border-right: 1px solid rgba(255,255,255,.15);
+}
+.number-item:last-child { border-right: none; }
+.number-val {
+  font-family: 'Clash Display', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.5rem); font-weight: 700;
+  color: #fff; margin-bottom: 8px; line-height: 1;
+}
+.number-lbl { font-size: 0.88rem; color: rgba(255,255,255,.7); font-weight: 500; }
+
+/* ── TESTIMONIALS ────────────────────────────────────── */
+#testimonials { background: var(--bg); }
+.testi-empty {
+  max-width: 520px; margin: 52px auto 0;
+  text-align: center; padding: 52px 40px;
+  background: var(--white); border: 2px dashed var(--border);
+  border-radius: var(--radius-lg);
+}
+.testi-emoji { font-size: 2.8rem; margin-bottom: 18px; }
+.testi-title { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
+.testi-sub { font-size: 0.9rem; color: var(--grey); margin-bottom: 28px; line-height: 1.7; }
+
+/* ── CONTACT ─────────────────────────────────────────── */
+#contact { background: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.contact-info h2 { margin-bottom: 14px; }
+.contact-info p { color: var(--grey); font-size: 0.95rem; line-height: 1.8; margin-bottom: 36px; }
+.reach-items { display: flex; flex-direction: column; gap: 14px; }
+.reach-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 20px; border: 1px solid var(--border);
+  border-radius: 12px; text-decoration: none;
+  color: var(--dark); font-weight: 500; font-size: 0.9rem;
+  transition: border-color .2s, background .2s, transform .15s;
+}
+.reach-item:hover { border-color: var(--blue); background: var(--blue-light); transform: translateX(4px); }
+.reach-icon {
+  width: 42px; height: 42px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;
+}
+.reach-icon.phone { background: #EFF6FF; }
+.reach-icon.wa { background: #F0FDF4; }
+.reach-icon.mail { background: #FFF7ED; }
+.reach-detail .rd-label { font-size: 0.72rem; color: var(--grey); font-weight: 500; letter-spacing: 0.3px; margin-bottom: 2px; }
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fg { display: flex; flex-direction: column; gap: 6px; }
+.fg label { font-size: 0.83rem; font-weight: 600; color: var(--dark); }
+.fg input, .fg select, .fg textarea {
+  padding: 12px 16px; border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm); font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 0.9rem; color: var(--dark); background: var(--white); outline: none;
+  transition: border-color .2s, box-shadow .2s; width: 100%;
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus {
+  border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+}
+.fg textarea { resize: vertical; min-height: 110px; }
+.form-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer { background: var(--dark); color: #94a3b8; padding: 64px 24px 32px; }
+.footer-inner { max-width: 1180px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 48px; }
+.footer-brand .logo-brand { color: #fff; }
+.footer-brand .logo-agency { color: #64748b; }
+.footer-tagline { font-size: 0.85rem; color: #64748b; margin-top: 12px; margin-bottom: 22px; line-height: 1.7; }
+.footer-socials { display: flex; gap: 10px; flex-wrap: wrap; }
+.social-btn {
+  width: 38px; height: 38px; border-radius: 9px;
+  border: 1px solid rgba(255,255,255,.1);
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; color: #94a3b8;
+  transition: background .2s, border-color .2s, color .2s;
+}
+.social-btn:hover { background: rgba(37,99,235,.25); border-color: var(--blue); color: #fff; }
+.footer-col-title { font-family: 'Clash Display', sans-serif; font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 18px; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { color: #94a3b8; text-decoration: none; font-size: 0.87rem; transition: color .2s; }
+.footer-links a:hover { color: #fff; }
+.footer-contact-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 0.87rem; }
+.footer-contact-item a { color: #94a3b8; text-decoration: none; transition: color .2s; }
+.footer-contact-item a:hover { color: #fff; }
+.footer-divider { height: 1px; background: rgba(255,255,255,.07); margin-bottom: 28px; }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: #64748b;
+}
+.footer-bottom a { color: #64748b; text-decoration: none; }
+.footer-bottom a:hover { color: #94a3b8; }
+
+/* ── MOBILE NAV DRAWER ──────────────────────────────── */
+@media (max-width: 960px) {
+  .nav-links {
+    display: none; flex-direction: column;
+    position: absolute; top: 68px; left: 0; right: 0;
+    background: var(--white); border-bottom: 1px solid var(--border);
+    padding: 16px 24px 20px; gap: 4px; box-shadow: var(--shadow-lg);
+    z-index: 999;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { width: 100%; padding: 12px 14px; font-size: 0.95rem; display: block; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────── */
+@media (max-width: 1040px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 860px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 44px; }
+  .hero-visual { display: none; }
+  .hero-section { padding: 72px 24px 64px; }
+  .steps-row { grid-template-columns: repeat(2, 1fr); gap: 48px 0; }
+  .steps-row::before { display: none; }
+
+  /* Vertical dotted connector for 2-col on tablet */
+  .steps-row .step:nth-child(1)::after,
+  .steps-row .step:nth-child(2)::after,
+  .steps-row .step:nth-child(3)::after {
+    display: none;
+  }
+
+  .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+  .numbers-grid { grid-template-columns: 1fr; }
+  .number-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.15); }
+  .number-item:last-child { border-bottom: none; }
+}
+
+@media (max-width: 640px) {
+  section { padding: 64px 16px; }
+  .hero-section { padding: 60px 16px 52px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .services-grid .service-card[style*="grid-column"] { grid-column: span 1 !important; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .hero-btns { flex-direction: column; }
+  .hero-btns .btn { width: 100%; }
+  .form-btns { flex-direction: column; }
+  .form-btns .btn { width: 100%; }
+  .testi-empty { padding: 36px 20px; }
+  .sc-features[style] { display: flex !important; flex-direction: column !important; grid-template-columns: none !important; }
+
+  /* Vertical steps on mobile */
+  .steps-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+    position: relative;
+  }
+  .steps-row::before { display: none; }
+
+  .step {
+    flex-direction: row;
+    text-align: left;
+    padding: 0 0 40px 0;
+    align-items: flex-start;
+    position: relative;
+    gap: 20px;
+  }
+  .step:last-child { padding-bottom: 0; }
+
+  /* Vertical dotted line */
+  .step::after {
+    content: '';
+    position: absolute;
+    left: 29px;
+    top: 60px;
+    bottom: 0;
+    width: 0;
+    border-left: 3px dashed var(--blue-mid);
+    z-index: 0;
+  }
+  .step:last-child::after { display: none; }
+
+  .step-num {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .step-content { display: flex; flex-direction: column; padding-top: 8px; }
+  .step-title { margin-bottom: 4px; }
+}
+
+/* ── SCROLL ANIMATIONS ──────────────────────────────── */
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ── UTILITY ─────────────────────────────────────────── */
+.text-blue { color: var(--blue); }
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ─────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo-wrap">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-brand">TurboTech</span>
+        <span class="logo-agency">agency</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="turbotech.html" target="_blank">Website Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="https://wa.me/919449989467?text=Hi%20TurboTech%20Agency" target="_blank" class="btn btn-wa btn-sm">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.859L.057 23.882l6.191-1.624A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.214-3.727.977.995-3.637-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────── -->
+<section class="hero-section">
+  <div class="hero-inner hero">
+    <div class="hero-content">
+      <div class="hero-tagline">🇮🇳 India's Local Digital Partner</div>
+      <div class="badge">Websites · Videos · IT Support · Growth</div>
+      <h1>Grow Your Business <em>Online</em> with TurboTech</h1>
+      <p>We build websites, edit videos, manage YouTube channels, and provide IT support — everything your small business needs to succeed digitally.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/919449989467?text=Hi%20TurboTech%20Agency%2C%20I%27d%20like%20to%20get%20started!" target="_blank" class="btn btn-wa">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.859L.057 23.882l6.191-1.624A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.214-3.727.977.995-3.637-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+          Get Started Free
+        </a>
+        <a href="#services" class="btn btn-outline">
+          Explore Services
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+      </div>
+      <div class="hero-sub">
+        <div class="hero-stat">
+          <div class="num">50+</div>
+          <div class="lbl">Projects Done</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">40+</div>
+          <div class="lbl">Happy Clients</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">5</div>
+          <div class="lbl">Services</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">India 🇮🇳</div>
+          <div class="lbl">Based</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div style="position:relative;">
+        <div class="floating-pill pill-1">
+          <div class="pill-dot" style="background:var(--green)"></div>
+          Active Projects
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-avatar">⚡</div>
+            <div>
+              <div class="hero-card-title">TurboTech Agency</div>
+              <div class="hero-card-sub">Your Digital Growth Partner</div>
+            </div>
+          </div>
+          <div class="service-list">
+            <div class="service-item">
+              <div class="si-icon" style="background:#EFF6FF">🌐</div>
+              <span class="si-label">Website Development</span>
+            </div>
+            <div class="service-item">
+              <div class="si-icon" style="background:#FFF7ED">🎬</div>
+              <span class="si-label">Video Editing &amp; Content</span>
+            </div>
+            <div class="service-item">
+              <div class="si-icon" style="background:#F0FDF4">📺</div>
+              <span class="si-label">YouTube Management</span>
+            </div>
+            <div class="service-item">
+              <div class="si-icon" style="background:#F5F3FF">💻</div>
+              <span class="si-label">IT &amp; Computer Services</span>
+            </div>
+            <div class="service-item">
+              <div class="si-icon" style="background:#ECFEFF">📈</div>
+              <span class="si-label">Digital Growth Solutions</span>
+            </div>
+          </div>
+        </div>
+        <div class="floating-pill pill-2">
+          <div class="pill-dot" style="background:var(--blue)"></div>
+          WhatsApp Support 24/7
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ───────────────────────────────────────── -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="badge">Our Services</div>
+      <h2>Everything Your Business Needs</h2>
+      <p>From building your first website to managing your YouTube channel — we handle the tech so you can focus on growing.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Website Dev -->
+      <div class="service-card featured fade-in">
+        <div class="sc-icon blue">🌐</div>
+        <div class="sc-name">Website Development</div>
+        <div class="sc-desc">Professional, fast, and mobile-ready websites tailored to your business goals and budget.</div>
+        <ul class="sc-features">
+          <li>Business websites &amp; landing pages</li>
+          <li>Portals &amp; custom solutions</li>
+          <li>WhatsApp &amp; contact integrations</li>
+          <li>Mobile-first responsive design</li>
+        </ul>
+        <div class="sc-cta">
+          <a href="turbotech.html" target="_blank" class="btn btn-primary btn-sm">
+            View Website Services
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Video Editing -->
+      <div class="service-card fade-in">
+        <div class="sc-icon" style="background:#FFF7ED">🎬</div>
+        <div class="sc-name">Video Editing &amp; Content Creation</div>
+        <div class="sc-desc">Eye-catching videos that stop the scroll and drive engagement for your brand.</div>
+        <ul class="sc-features">
+          <li>YouTube videos &amp; vlogs</li>
+          <li>Reels &amp; Shorts editing</li>
+          <li>Promotional &amp; ad videos</li>
+          <li>Intro / outro animations</li>
+        </ul>
+        <div class="sc-cta">
+          <a href="#contact" class="btn btn-outline btn-sm">Get a Quote</a>
+        </div>
+      </div>
+
+      <!-- YouTube Management -->
+      <div class="service-card fade-in">
+        <div class="sc-icon" style="background:#F0FDF4">📺</div>
+        <div class="sc-name">YouTube Channel Management</div>
+        <div class="sc-desc">Complete YouTube growth strategy — from zero to monetization-ready.</div>
+        <ul class="sc-features">
+          <li>Channel setup &amp; branding</li>
+          <li>SEO &amp; keyword optimization</li>
+          <li>Content strategy &amp; planning</li>
+          <li>Thumbnail design</li>
+        </ul>
+        <div class="sc-cta">
+          <a href="#contact" class="btn btn-outline btn-sm">Get a Quote</a>
+        </div>
+      </div>
+
+      <!-- IT Services -->
+      <div class="service-card fade-in">
+        <div class="sc-icon violet">💻</div>
+        <div class="sc-name">IT &amp; Computer Services</div>
+        <div class="sc-desc">Reliable tech support for individuals and small businesses — fast and affordable.</div>
+        <ul class="sc-features">
+          <li>System setup &amp; configuration</li>
+          <li>Troubleshooting &amp; repair</li>
+          <li>Software installation</li>
+          <li>Network &amp; connectivity help</li>
+        </ul>
+        <div class="sc-cta">
+          <a href="#contact" class="btn btn-outline btn-sm">Get Support</a>
+        </div>
+      </div>
+
+      <!-- Digital Growth -->
+      <div class="service-card fade-in" style="grid-column: span 2;">
+        <div class="sc-icon cyan">📈</div>
+        <div class="sc-name">Digital Growth Solutions</div>
+        <div class="sc-desc">Build a strong online presence from scratch. We set up everything you need to be found and trusted online — even if you're a complete beginner.</div>
+        <ul class="sc-features" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <li>Online presence setup</li>
+          <li>Branding &amp; logo design</li>
+          <li>Social media basics</li>
+          <li>Google Business profile</li>
+        </ul>
+        <div class="sc-cta" style="margin-top:20px;">
+          <a href="#contact" class="btn btn-outline btn-sm">Start Growing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY CHOOSE US ──────────────────────────────────── -->
+<section id="why">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="badge">Why TurboTech</div>
+      <h2>A Team of Passionate Tech Experts</h2>
+      <p>We're not just another agency — we're a dedicated team that cares about your growth.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-in">
+        <span class="why-icon">💰</span>
+        <div class="why-title">Affordable Solutions</div>
+        <div class="why-text">Premium quality at prices that make sense for small businesses and startups.</div>
+      </div>
+      <div class="why-card fade-in">
+        <span class="why-icon">⚡</span>
+        <div class="why-title">Fast Delivery</div>
+        <div class="why-text">Quick turnaround without compromising on quality — your time matters.</div>
+      </div>
+      <div class="why-card fade-in">
+        <span class="why-icon">🤝</span>
+        <div class="why-title">Beginner-Friendly</div>
+        <div class="why-text">No tech jargon. We speak your language and guide you every step of the way.</div>
+      </div>
+      <div class="why-card fade-in">
+        <span class="why-icon">🏢</span>
+        <div class="why-title">Multi-Service Agency</div>
+        <div class="why-text">One team for websites, videos, IT support, and digital growth. No need to juggle vendors.</div>
+      </div>
+      <div class="why-card fade-in">
+        <span class="why-icon">💬</span>
+        <div class="why-title">WhatsApp Support</div>
+        <div class="why-text">Direct access to our team on WhatsApp. Get help when you actually need it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ──────────────────────────────────── -->
+<section id="how">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="badge">The Process</div>
+      <h2>How It Works</h2>
+      <p>Getting started is simple. Four easy steps from your first message to your business growing.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step fade-in">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Contact Us</div>
+          <div class="step-desc">Reach out via WhatsApp, call, or the contact form. Tell us what you need.</div>
+        </div>
+      </div>
+      <div class="step fade-in">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">We Understand</div>
+          <div class="step-desc">We listen, ask the right questions, and understand your business requirement fully.</div>
+        </div>
+      </div>
+      <div class="step fade-in">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">We Build</div>
+          <div class="step-desc">Our team delivers your solution — website, video, IT fix — on time and on budget.</div>
+        </div>
+      </div>
+      <div class="step fade-in">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">You Grow</div>
+          <div class="step-desc">Watch your business grow online. We stay available for support whenever you need us.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NUMBERS ────────────────────────────────────────── -->
+<section id="numbers" style="padding:0;">
+  <div class="numbers-grid">
+    <div class="number-item">
+      <div class="number-val">50+</div>
+      <div class="number-lbl">Projects Completed</div>
+    </div>
+    <div class="number-item">
+      <div class="number-val">40+</div>
+      <div class="number-lbl">Happy Clients</div>
+    </div>
+    <div class="number-item">
+      <div class="number-val">5</div>
+      <div class="number-lbl">Services Offered</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ───────────────────────────────────── -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="badge">Reviews</div>
+      <h2>What Our Clients Say</h2>
+    </div>
+    <div class="testi-empty fade-in">
+      <div class="testi-emoji">⭐</div>
+      <div class="testi-title">No reviews yet — Be our first happy client!</div>
+      <div class="testi-sub">We're new and working hard to deliver exceptional results. Join us early and help shape what TurboTech becomes.</div>
+      <a href="https://wa.me/919449989467?text=Hi%20TurboTech%20Agency%2C%20I%27d%20like%20to%20add%20my%20review!" target="_blank" class="btn btn-primary">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.859L.057 23.882l6.191-1.624A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.214-3.727.977.995-3.637-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+        Add Your Review
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────── -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <div class="badge">Get In Touch</div>
+        <h2>Let's Work Together</h2>
+        <p>Tell us what you need and we'll get back to you on WhatsApp within the hour. Whether it's a website, a video, IT support — we're here.</p>
+        <div class="reach-items">
+          <a href="tel:+919449989467" class="reach-item">
+            <div class="reach-icon phone">
+              <!-- Phone SVG -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.08a16 16 0 006 6l.36-.36a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div class="reach-detail">
+              <div class="rd-label">Call Us</div>
+              +91 94499 89467
+            </div>
+          </a>
+          <a href="https://wa.me/919449989467?text=Hi%20TurboTech%20Agency" target="_blank" class="reach-item">
+            <div class="reach-icon wa">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.859L.057 23.882l6.191-1.624A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.214-3.727.977.995-3.637-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+            </div>
+            <div class="reach-detail">
+              <div class="rd-label">WhatsApp</div>
+              Chat with us now
+            </div>
+          </a>
+          <a href="mailto:turbotech.agency@gmail.com" class="reach-item">
+            <div class="reach-icon mail">
+              <!-- Clean Email SVG -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            </div>
+            <div class="reach-detail">
+              <div class="rd-label">Email</div>
+              turbotech.agency@gmail.com
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="fg">
+              <label for="fname">Your Name</label>
+              <input type="text" id="fname" placeholder="e.g. Ravi Kumar"/>
+            </div>
+            <div class="fg">
+              <label for="fphone">Phone Number</label>
+              <input type="tel" id="fphone" placeholder="+91 "/>
+            </div>
+          </div>
+          <div class="fg">
+            <label for="fbtype">Business Type</label>
+            <select id="fbtype">
+              <option value="">Select your business type</option>
+              <option>School / Coaching Center</option>
+              <option>Clinic / Hospital</option>
+              <option>Shop / Retail</option>
+              <option>Freelancer / Creator</option>
+              <option>Restaurant / Food Business</option>
+              <option>Salon / Beauty</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg" id="otherGroup" style="display:none;">
+            <label for="fother">Describe your business</label>
+            <input type="text" id="fother" placeholder="Tell us about your business"/>
+          </div>
+          <div class="fg">
+            <label for="fmsg">Message</label>
+            <textarea id="fmsg" placeholder="What service are you looking for? Tell us a bit about your needs..."></textarea>
+          </div>
+          <div class="form-btns">
+            <button class="btn btn-wa" onclick="sendWA()">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.859L.057 23.882l6.191-1.624A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.214-3.727.977.995-3.637-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+              Send via WhatsApp
+            </button>
+            <a href="tel:+919449989467" class="btn btn-call">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.08a16 16 0 006 6l.36-.36a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="#" class="logo-wrap" style="display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:10px;">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-brand" style="color:#fff">TurboTech</span>
+            <span class="logo-agency">agency</span>
+          </div>
+        </a>
+        <div class="footer-tagline">Complete digital &amp; tech solutions for schools, clinics, coaching centers, and small businesses across India.</div>
+        <div class="footer-socials">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/919449989467" target="_blank" class="social-btn" title="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.859L.057 23.882l6.191-1.624A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.214-3.727.977.995-3.637-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+          </a>
+          <!-- Phone -->
+          <a href="tel:+919449989467" class="social-btn" title="Call">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.08a16 16 0 006 6l.36-.36a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </a>
+          <!-- Email -->
+          <a href="mailto:turbotech.agency@gmail.com" class="social-btn" title="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="turbotech.html" target="_blank">Website Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="turbotech.html" target="_blank">Website Development</a></li>
+          <li><a href="#services">Video Editing</a></li>
+          <li><a href="#services">YouTube Management</a></li>
+          <li><a href="#services">IT Support</a></li>
+          <li><a href="#services">Digital Growth</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.08a16 16 0 006 6l.36-.36a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:+919449989467">+91 94499 89467</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          <a href="mailto:turbotech.agency@gmail.com">turbotech.agency@gmail.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.859L.057 23.882l6.191-1.624A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.214-3.727.977.995-3.637-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+          <a href="https://wa.me/919449989467" target="_blank">WhatsApp Us</a>
+        </div>
+        <div style="margin-top:18px;">
+          <a href="https://wa.me/919449989467?text=Hi%20TurboTech%20Agency" target="_blank" class="btn btn-wa btn-sm">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.859L.057 23.882l6.191-1.624A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.214-3.727.977.995-3.637-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+            Book Now
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <span>© 2026 TurboTech. All rights reserved.</span>
+      <span>Made with ❤️ for small businesses in India 🇮🇳</span>
+      <span>
+        <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── FLOATING WA BUTTON ─────────────────────────────── -->
+<a href="https://wa.me/919449989467?text=Hi%20TurboTech%20Agency" target="_blank" rel="noopener"
+   style="position:fixed;bottom:24px;right:24px;z-index:999;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.45);text-decoration:none;transition:transform .2s,box-shadow .2s;"
+   onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"
+   title="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.859L.057 23.882l6.191-1.624A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.214-3.727.977.995-3.637-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+</a>
+
+<script>
+// ── HAMBURGER ─────────────────────────────────────────
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// Close nav when a link is clicked (mobile)
+document.querySelectorAll('#navLinks a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+// ── BUSINESS TYPE CONDITIONAL ─────────────────────────
+document.getElementById('fbtype').addEventListener('change', function() {
+  document.getElementById('otherGroup').style.display =
+    this.value === 'Other' ? 'flex' : 'none';
+});
+
+// ── WHATSAPP FORM SEND ────────────────────────────────
+function sendWA() {
+  const name  = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('fphone').value.trim();
+  const btype = document.getElementById('fbtype').value;
+  const other = document.getElementById('fother').value.trim();
+  const msg   = document.getElementById('fmsg').value.trim();
+  const biz   = btype === 'Other' ? (other || 'Other') : btype;
+
+  if (!name && !phone) {
+    alert('Please fill in at least your name or phone number.');
+    return;
+  }
+
+  const text = `Hi TurboTech Agency 👋\n\nName: ${name || 'Not provided'}\nPhone: ${phone || 'Not provided'}\nBusiness: ${biz || 'Not specified'}\nMessage: ${msg || 'No message'}`;
+
+  window.open('https://wa.me/919449989467?text=' + encodeURIComponent(text), '_blank');
+}
+
+// ── SCROLL ANIMATIONS ─────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ── ACTIVE NAV ON SCROLL ──────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', function() {
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+  });
+  navAnchors.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
